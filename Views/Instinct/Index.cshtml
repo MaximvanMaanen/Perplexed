@@ -1,0 +1,33 @@
+﻿@model List<guild_instinct.Models.GuildData.InstinctGuildMember>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>Instinct Guild Roster</h1>
+
+<table class="table table-striped table-dark">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Rank</th>
+            <th scope="col">Class</th>
+            <th scope="col">Race</th>
+            <th scope="col">Level</th>
+            <th scope="col">Realm</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (guild_instinct.Models.GuildData.InstinctGuildMember member in Model)
+        {
+            <tr>
+                <td>@member.Name</td>
+                <td>@member.RankName</td>
+                <td>@member.PlayableClass</td>
+                <td>@member.PlayableRace</td>
+                <td>@member.Level</td>
+                <td>@member.Realm</td>
+            </tr>
+        }
+    </tbody>
+</table>
